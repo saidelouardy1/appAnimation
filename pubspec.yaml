@@ -39,10 +39,17 @@ dependencies:
   day_night_switch: ^1.0.4
   google_fonts: ^6.2.1
   flutter_animate: ^4.5.2
+  flutter_launcher_icons: ^0.14.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/download.jpg"
+  min_sdk_android: 21
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
