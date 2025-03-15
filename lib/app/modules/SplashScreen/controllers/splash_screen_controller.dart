@@ -1,13 +1,31 @@
-import 'package:app_animation/app/routes/app_pages.dart';
+import 'dart:async';
+import 'dart:math';
+import 'dart:ui';
 import 'package:get/get.dart';
 
 class SplashScreenController extends GetxController {
-  var isVisible = true.obs;
+  RxList<Offset> starsPositions = RxList<Offset>([]);
+
   @override
   void onInit() {
     super.onInit();
-    Future.delayed(Duration(seconds: 2),
-    ()=>Get.toNamed(Routes.HOME));
+    
+    // Initialize the stars with random positions
+    _generateRandomPositions();
+
+    // Periodically update the positions of all stars
+    Timer.periodic(Duration(milliseconds: 800), (timer) {
+      _generateRandomPositions(); // Update positions every 800 ms
+    });
+  }
+
+  // Method to generate random positions for all stars
+  void _generateRandomPositions() {
+    starsPositions.value = List.generate(50, (_) {
+      double randomLeft = Random().nextDouble() * Get.width;
+      double randomTop = Random().nextDouble() * Get.height / 1.3;
+      return Offset(randomLeft, randomTop);
+    });
   }
 
   @override
@@ -19,6 +37,4 @@ class SplashScreenController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-
 }

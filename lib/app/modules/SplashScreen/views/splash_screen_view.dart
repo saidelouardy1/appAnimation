@@ -12,11 +12,26 @@ class SplashScreenView extends GetView<SplashScreenController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF1e2230),
-      body: Container(
+      body: SizedBox(
         width: Get.width,
         height: Get.height,
         child: Stack(
           children: [
+             Positioned.fill(
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.black.withOpacity(0.8),
+                    Colors.blueGrey.withOpacity(0.8),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+              child: _buildStars(), // Call to build stars
+            ),
+          ),
             Align(
               alignment: Alignment.center,
               child: Column(
@@ -27,11 +42,11 @@ class SplashScreenView extends GetView<SplashScreenController> {
                     backgroundImage: AssetImage('assets/download.jpg'),
                     radius: 90,
                   ).animate().fadeIn(
-                    duration: Duration(seconds: 1), 
-                    curve: Curves.bounceOut,
-                  ).then().scale(
-                    duration: Duration(seconds:1 ),
+                    duration: Duration(seconds: 2), 
                     curve: Curves.easeIn,
+                  ).then().scale(
+                    duration: Duration(seconds:2 ),
+                    curve: Curves.bounceOut,
                   ),
                   // Animated Text for 'Open Mobile Code'
                   Text(
@@ -42,8 +57,8 @@ class SplashScreenView extends GetView<SplashScreenController> {
                       fontWeight: FontWeight.w400,
                     ),
                   ).animate().fadeIn(
-                    duration: Duration(seconds: 1),
-                    curve: Curves.easeIn,
+                    duration: Duration(seconds: 3),
+                    curve: Curves.easeInOut,
                   ),
                   // Animated Text for 'dev.dream'
                   Text(
@@ -54,8 +69,8 @@ class SplashScreenView extends GetView<SplashScreenController> {
                       fontWeight: FontWeight.w200,
                     ),
                   ).animate().fadeIn(
-                    duration: Duration(seconds: 1),
-                    curve: Curves.easeIn,
+                    duration: Duration(seconds: 3),
+                    curve: Curves.easeInOut,
                   ),
                 ],
               ),
@@ -65,4 +80,26 @@ class SplashScreenView extends GetView<SplashScreenController> {
       ),
     );
   }
+ Widget _buildStars() {
+    return Obx(
+      () => Stack(
+        children: List.generate(controller.starsPositions.length, (index) {
+          final position = controller.starsPositions[index];
+          return Positioned(
+            left: position.dx,
+            top: position.dy,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+              width: 5,
+              height: 5,
+            ),
+          );
+        }),
+      ),
+    );
+  }
+
 }
