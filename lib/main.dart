@@ -9,8 +9,10 @@ void main() {
     GetMaterialApp(
       title: 'Day Night Switch',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: AppPages.INITIAL,
+       theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       getPages: AppPages.routes,
     ),
   );

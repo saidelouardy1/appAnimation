@@ -1,20 +1,11 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
 class HomeController extends GetxController {
-
-  @override
-  void onInit() {
-    super.onInit();
+  var isDarkMode = false.obs;
+  late AnimationController animationController;
+  void toggleTheme() {
+    isDarkMode.value = !isDarkMode.value;
+    Get.changeThemeMode(isDarkMode.value ? ThemeMode.dark : ThemeMode.light);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
 }

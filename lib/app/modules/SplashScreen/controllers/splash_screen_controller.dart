@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 import 'dart:ui';
+import 'package:app_animation/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class SplashScreenController extends GetxController {
@@ -17,6 +18,12 @@ class SplashScreenController extends GetxController {
     Timer.periodic(Duration(milliseconds: 800), (timer) {
       _generateRandomPositions(); // Update positions every 800 ms
     });
+    Future.delayed(
+      Duration(seconds: 4),
+      (){
+         Get.offNamed(Routes.HOME);
+      }
+    );
   }
 
   // Method to generate random positions for all stars
