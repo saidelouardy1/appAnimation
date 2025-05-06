@@ -102,13 +102,13 @@ class HomeView extends StatelessWidget {
                     boxShadow: [
                       isDarkMode
                           ? BoxShadow(
-                              color: Colors.white.withOpacity(0.2),
+                              color: Colors.white.withAlpha((2).toInt()),
                               blurRadius: 20,
                               spreadRadius: 5,
                             )
                           : BoxShadow(
                               color: Colors.yellow
-                                  .withOpacity(0.4), 
+                                  .withAlpha((2).toInt()), 
                               blurRadius: 30, 
                               spreadRadius:
                                   10, 

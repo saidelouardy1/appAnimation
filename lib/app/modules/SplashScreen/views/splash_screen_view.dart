@@ -22,8 +22,8 @@ class SplashScreenView extends GetView<SplashScreenController> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Colors.black.withOpacity(0.8),
-                    Colors.blueGrey.withOpacity(0.8),
+                    Colors.black.withAlpha((0.5 * 255).toInt()),
+                    Colors.blueGrey.withAlpha((0.5 * 255).toInt()),
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
