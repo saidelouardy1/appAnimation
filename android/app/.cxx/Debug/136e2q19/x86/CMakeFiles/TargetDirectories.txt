@@ -1,0 +1,2 @@
+C:/Users/user/FlutterProject/app_animation/android/app/.cxx/Debug/136e2q19/x86/CMakeFiles/edit_cache.dir
+C:/Users/user/FlutterProject/app_animation/android/app/.cxx/Debug/136e2q19/x86/CMakeFiles/rebuild_cache.dir

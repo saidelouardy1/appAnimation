@@ -16,7 +16,7 @@ class SplashScreenController extends GetxController {
 
     // Periodically update the positions of all stars
     Timer.periodic(Duration(milliseconds: 800), (timer) {
-      _generateRandomPositions(); // Update positions every 800 ms
+      _generateRandomPositions(); 
     });
     Future.delayed(
       Duration(seconds: 4),
