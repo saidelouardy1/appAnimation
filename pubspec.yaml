@@ -43,10 +43,11 @@ dependencies:
   flutter_svg: ^2.0.17
   sqflite_common_ffi: ^2.3.5
   file_picker: 8.3.7
-  zego_uikit_prebuilt_call: ^4.17.0-beta.5
+  zego_uikit_prebuilt_call: ^4.16.28
   zego_uikit: ^2.28.3
   firebase_core: ^3.13.0
   firebase_messaging: ^15.2.5
+  zego_uikit_signaling_plugin: ^2.8.12
 
 
 dev_dependencies:

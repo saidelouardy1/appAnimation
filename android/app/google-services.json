@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "864553671196",
+    "project_id": "chatapp-74bf7",
+    "storage_bucket": "chatapp-74bf7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864553671196:android:38bb94b085ac5d54ec5dd9",
+        "android_client_info": {
+          "package_name": "openmobilecode.app_animation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJIPwiFQqyCs_rnI0p70u_MMWjpG9_VDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

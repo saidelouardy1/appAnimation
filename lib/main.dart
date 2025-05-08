@@ -15,24 +15,25 @@
 //     ),
 //   );
 // }
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 import 'app/routes/app_pages.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   WidgetsFlutterBinding.ensureInitialized();
 
-  // تهيئة خدمة الدعوة من Zego مع مفتاح التنقل
   ZegoUIKitPrebuiltCallInvitationService().setNavigatorKey(navigatorKey);
 
-  // تهيئة Zego UIKit واستخدام واجهة المكالمات النظامية
   await ZegoUIKit().initLog();
-  ZegoUIKitPrebuiltCallInvitationService().useSystemCallingUI([]);
+  ZegoUIKitPrebuiltCallInvitationService().useSystemCallingUI([ZegoUIKitSignalingPlugin()]);
 
-  // تشغيل التطبيق باستخدام GetX وتحديد مفتاح التنقل
   runApp(
     GetMaterialApp(
       title: 'Day Night Switch',
@@ -42,7 +43,7 @@ void main() async {
         primarySwatch: Colors.blue,
       ),
       getPages: AppPages.routes,
-      navigatorKey: navigatorKey,  // تحديد مفتاح التنقل هنا
+      navigatorKey: navigatorKey,
     ),
   );
 }
