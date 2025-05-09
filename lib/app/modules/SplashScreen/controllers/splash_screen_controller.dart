@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'dart:ui';
 import 'package:app_animation/app/routes/app_pages.dart';
+import 'package:app_animation/main.dart';
 import 'package:get/get.dart';
 
 class SplashScreenController extends GetxController {
@@ -21,7 +22,7 @@ class SplashScreenController extends GetxController {
     Future.delayed(
       Duration(seconds: 4),
       (){
-         Get.offNamed(Routes.HOME);
+        sharedPreferences.getString("Id") != null ? Get.offNamed(Routes.HOME) : Get.offNamed(Routes.AUTHENTICATION) ;
       }
     );
   }

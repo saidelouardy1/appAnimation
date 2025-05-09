@@ -2,6 +2,7 @@ analyzer:
   errors:
     unnecessary_overrides: ignore
     constant_identifier_names: ignore
+    unused_local_variable: ignore
 linter:
   rules:
     

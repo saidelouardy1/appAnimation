@@ -18,17 +18,19 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 import 'app/routes/app_pages.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
-
+late SharedPreferences sharedPreferences;
 void main() async {
    WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   WidgetsFlutterBinding.ensureInitialized();
-
+   sharedPreferences = await SharedPreferences.getInstance();
+  Get.put<SharedPreferences>(sharedPreferences);
   ZegoUIKitPrebuiltCallInvitationService().setNavigatorKey(navigatorKey);
 
   await ZegoUIKit().initLog();

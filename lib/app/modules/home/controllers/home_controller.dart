@@ -1,12 +1,12 @@
-import 'package:file_picker/file_picker.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart';
-import 'dart:io';
 
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+
 
 class HomeController extends GetxController {
+
+  GlobalKey<FormState> key = GlobalKey();
+  TextEditingController ID = TextEditingController();
+  TextEditingController Name = TextEditingController();
  
 }

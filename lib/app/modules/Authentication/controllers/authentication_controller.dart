@@ -1,12 +1,18 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthenticationController extends GetxController {
-  //TODO: Implement AuthenticationController
+  GlobalKey<FormState> globalKey = GlobalKey();
+  TextEditingController UserName = TextEditingController();
+  TextEditingController UserId = TextEditingController();
 
-  final count = 0.obs;
+   late SharedPreferences prefs;
+  
   @override
   void onInit() {
     super.onInit();
+    prefs = Get.find<SharedPreferences>();
   }
 
   @override
@@ -19,5 +25,9 @@ class AuthenticationController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  SaveNameAndId(String Name , String Id){
+    prefs.setString("name", Name);
+    prefs.setString("Id", Id);
+  }
+
 }
